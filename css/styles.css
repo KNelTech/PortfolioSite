@@ -1,0 +1,78 @@
+body,
+html {
+  font-family: "Antonio", sans-serif;
+  height: 100%;
+  margin: 0;
+  background: url(/assets/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+
+  color: white !important;
+}
+
+.code {
+  color: white; /* Maintain white color with reduced opacity */
+  font-family: "Cutive Mono", monospace;
+  font-size: 16px;
+  opacity: 0.6; /* Adjust this value to control brightness */
+  white-space: pre-wrap; /* Ensure text wraps correctly */
+  margin: 24px;
+  position: absolute; /* Position text outside of the column boundaries */
+
+  z-index: 1; /* Ensure text appears above other elements */
+  pointer-events: none; /* Optional: make text unselectable */
+}
+
+.antonioRegular {
+  font-family: "Antonio", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.antonioBold {
+  font-family: "Antonio", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre,
+code {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  border: none; /* Remove any default borders */
+  background: none; /* Remove any default background */
+  font-family: inherit; /* Inherit the site's font */
+  font-size: inherit; /* Inherit the font size */
+  color: inherit; /* Inherit text color */
+  white-space: pre-wrap; /* Preserve formatting while wrapping lines */
+  word-wrap: break-word; /* Prevent overflow */
+}
+
+/* Navigation */
+
+.nav-pills .nav-link {
+  color: inherit; /* Make sure they inherit the color from the parent */
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.nav-pills .nav-link:hover {
+  color: #fb7203; /* White text color for better contrast */
+  transform: scale(1.1);
+}
+
+.nav {
+  background-color: #2b6775ce;
+  border-radius: 0 0 10px 10px;
+  max-width: fit-content;
+}
+
+.pipe {
+  color: #1aabb6;
+  margin-top: 8px;
+}
