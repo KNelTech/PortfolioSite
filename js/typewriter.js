@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var typewriter = new Typewriter(app, {
       loop: true,
       delay: 75,
+      deleteSpeed: 10,
     });
 
     typewriter
