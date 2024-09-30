@@ -23,13 +23,18 @@
       rel="stylesheet"
     />
     <script src="/js/script.js" defer></script>
+    <script src="/js/typewriter.js" defer></script>
+    <script
+      src="https://unpkg.com/typewriter-effect@latest/dist/core.js"
+      defer
+    ></script>
   </head>
   <body>
     <div class="container-fluid">
       <!-- Navigation Row -->
       <div class="row">
         <nav class="col-12 col-md-8 col-lg-4 ms-auto fs-2">
-          <ul class="nav nav-pills text-white antonioBold">
+          <ul class="nav text-white antonioBold">
             <li class="nav-item">
               <a class="nav-link" href="#">Home</a>
             </li>
@@ -48,52 +53,7 @@
       <!-- Main Content Row -->
       <div class="row">
         <div class="col-md-4">
-          <pre class="code intro-paragraph">
-export default class ConsoleTyper { 
-    constructor(props) {
-    const { paragraphElement } = props;
-            
-    if (!paragraphElement) {
-        console.error(this.errorMessages.notParagraph);
-        return;
-    }
-            
-    if (paragraphElement.tagName !== "P") {
-        console.error(this.errorMessages.notParagraph);
-        return;
-    }
-            
-    const textToType = paragraphElement.innerHTML;
-    if (textToType.length === 0) {
-        console.error(this.errorMessages.notContent);
-    }
-            
-    this.defaultSettings = {
-        loop: false,
-        loopAfterSeconds: 6,
-        cursor: "I",
-        stopCursorAfterBlinks: 10,
-        cursorAnimationSpeedMs: 500,
-        typingSpeedMs: 10,
-        onStartTyping: () => {},
-        onStopTyping: () => {},
-        onStopCursorAnimation: () => {}
-    };
-            
-    this.state = {
-        isTyping: false
-    };
-            
-    setTimeout(() => {
-        if (this.state.isTyping === true) {
-            this.onStopCursorAnimation();
-            return;
-        }
-        paragraphElement.innerHTML = newText;
-        this.animateCursor(actualBlink + 1);
-    }, cursorAnimationSpeedMs);
-    } </pre
-          >
+          <pre class="code intro-paragraph"></pre>
         </div>
 
         <div class="col-md-8">

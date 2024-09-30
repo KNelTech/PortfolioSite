@@ -55,13 +55,14 @@ code {
 
 /* Navigation */
 
-.nav-pills .nav-link {
+.nav .nav-link {
   color: inherit; /* Make sure they inherit the color from the parent */
   transition: transform 0.3s ease, color 0.3s ease;
   display: inline-block;
+  text-decoration: none;
 }
 
-.nav-pills .nav-link:hover {
+.nav .nav-link:hover {
   color: #fb7203; /* White text color for better contrast */
   transform: scale(1.1);
 }
@@ -75,4 +76,9 @@ code {
 .pipe {
   color: #1aabb6;
   margin-top: 8px;
+}
+
+.nav .nav-link:focus,
+.nav .nav-link:active {
+  color: inherit; /* Maintain the same color on focus/active */
 }
