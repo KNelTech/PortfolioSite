@@ -3,7 +3,7 @@ html {
   font-family: "Antonio", sans-serif;
   height: 100%;
   margin: 0;
-  background: url(/assets/background.jpg) no-repeat center center fixed;
+  background: url(/assets/background2.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -50,6 +50,11 @@ code {
   word-wrap: break-word; /* Prevent overflow */
 }
 
+.MainContent {
+  position: relative; /* Ensure it respects z-index */
+  z-index: 50; /* Higher than intro-paragraph */
+}
+
 /* Navigation */
 
 .nav .nav-link {
@@ -68,6 +73,7 @@ code {
   background-color: #2b6775ce;
   border-radius: 0 0 10px 10px;
   max-width: fit-content;
+  z-index: 100;
 }
 
 .pipe {
@@ -85,7 +91,7 @@ code {
 /* Name */
 
 .nameContainer,
-.smallerCircle {
+.kodiPic {
   margin-top: 80px;
 }
 
@@ -98,8 +104,9 @@ code {
   z-index: 1111;
 }
 
-.smallerCircle {
+.kodiPic {
   width: 300px;
+  opacity: 0.8;
 }
 
 .transparentCard {
@@ -117,13 +124,12 @@ code {
 
 .circle-container {
   position: relative;
-  width: 450px; /* Adjust size as necessary */
-  height: 450px; /* Maintain circle shape */
+  max-width: 450px; /* Adjust size as necessary */
 }
 
 .icon {
-  width: 110px; /* Adjust the icon size */
-  height: 110px; /* Ensure proportional height */
+  position: absolute;
+  width: 25%; /* Adjust the icon size */
 }
 
 /* Position each icon like clock hours */
@@ -151,7 +157,7 @@ code {
 
 /* Bottom (6 o'clock) */
 .icon-4 {
-  bottom: 15%;
+  bottom: 8%;
   left: 52%;
   transform: translateX(-50%);
 }
@@ -169,15 +175,3 @@ code {
   left: 20%;
   transform: translate(-50%, -50%);
 }
-
-/* @keyframes rotateIcons {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.circle-container {
-  animation: rotateIcons 10s linear infinite; /* Rotates the whole container for continuous movement 
-} */
