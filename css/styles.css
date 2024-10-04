@@ -8,22 +8,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: hidden;
 
   color: white !important;
-}
-
-.code {
-  color: white; /* Maintain white color with reduced opacity */
-  font-family: "Cutive Mono", monospace;
-  font-size: 16px;
-  opacity: 0.6; /* Adjust this value to control brightness */
-  white-space: pre-wrap; /* Ensure text wraps correctly */
-  margin: 24px;
-  position: absolute; /* Position text outside of the column boundaries */
-
-  z-index: 1; /* Ensure text appears above other elements */
-  pointer-events: none; /* Optional: make text unselectable */
 }
 
 .antonioRegular {
@@ -38,6 +24,17 @@ html {
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
+}
+
+.code {
+  color: white; /* Maintain white color with reduced opacity */
+  font-family: "Cutive Mono", monospace;
+  font-size: 16px;
+  opacity: 0.4; /* Adjust this value to control brightness */
+  white-space: pre-wrap; /* Ensure text wraps correctly */
+  margin: 24px;
+  position: absolute; /* Position text outside of the column boundaries */
+  pointer-events: none; /* Optional: make text unselectable */
 }
 
 pre,
@@ -82,3 +79,105 @@ code {
 .nav .nav-link:active {
   color: inherit; /* Maintain the same color on focus/active */
 }
+
+/* Main Content */
+
+/* Name */
+
+.nameContainer,
+.smallerCircle {
+  margin-top: 80px;
+}
+
+.name {
+  color: #fb7203;
+  font-size: 85px;
+}
+
+.main-content {
+  z-index: 1111;
+}
+
+.smallerCircle {
+  width: 300px;
+}
+
+.transparentCard {
+  background-color: rgba(0, 0, 0, 0.534) !important;
+  border-radius: 10px;
+}
+
+.largerCircle {
+  margin-top: -40px;
+}
+
+.largerCircleWrapper {
+  position: relative;
+}
+
+.circle-container {
+  position: relative;
+  width: 450px; /* Adjust size as necessary */
+  height: 450px; /* Maintain circle shape */
+}
+
+.icon {
+  width: 110px; /* Adjust the icon size */
+  height: 110px; /* Ensure proportional height */
+}
+
+/* Position each icon like clock hours */
+
+/* Top (12 o'clock) */
+.icon-1 {
+  top: 0;
+  left: 51%;
+  transform: translateX(-50%);
+}
+
+/* Top-right (2 o'clock) */
+.icon-2 {
+  top: 25%;
+  right: 20%;
+  transform: translate(50%, -50%);
+}
+
+/* Bottom-right (4 o'clock) */
+.icon-3 {
+  bottom: 45%;
+  right: 20%;
+  transform: translate(50%, 50%);
+}
+
+/* Bottom (6 o'clock) */
+.icon-4 {
+  bottom: 15%;
+  left: 52%;
+  transform: translateX(-50%);
+}
+
+/* Bottom-left (8 o'clock) */
+.icon-5 {
+  bottom: 45%;
+  left: 25%;
+  transform: translate(-50%, 50%);
+}
+
+/* Top-left (10 o'clock) */
+.icon-6 {
+  top: 25%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+/* @keyframes rotateIcons {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.circle-container {
+  animation: rotateIcons 10s linear infinite; /* Rotates the whole container for continuous movement 
+} */

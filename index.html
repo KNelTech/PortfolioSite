@@ -49,20 +49,68 @@
         </nav>
       </div>
 
-      <!-- Main Content Row -->
+      <!-- side bar -->
       <div class="row">
         <div class="col-md-4">
           <pre class="code intro-paragraph"></pre>
         </div>
 
-        <div class="col-md-8">
-          <h4>Main Content</h4>
-          <p>
-            This is the main content that will take up more space on the page.
-          </p>
+        <!-- main content -->
+        <div class="col-md-8 MainContent">
+          <!-- First Section (Kodi Nelson) -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex flex-column flex-grow-1 nameContainer">
+              <span class="antonioBold name">Kodi</span>
+              <hr class="nameHR w-100 my-1" />
+              <span class="antonioBold name">Nelson</span>
+            </div>
+            <img
+              class="smallerCircle img-fluid ms-3 me-5"
+              src="/assets/smallerCircle.png"
+              alt="Kodi's Picture"
+            />
+          </div>
+
+          <!-- Additional Rows in Main Content -->
+          <div class="row mt-4">
+            <div class="col-md-5 col-sm-12">
+              <div class="card transparentCard text-white">
+                <div class="card-body">
+                  <h5 class="card-title">bullshit about kodi</h5>
+                  <p class="card-text">
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-5 col-sm-12 d-flex align-items-center justify-content-center largerCircleWrapper"
+            >
+              <div class="circle-container position-relative">
+                <img
+                  class="img-fluid largerCircle"
+                  src="/assets/largerCircle.png"
+                  alt=""
+                />
+                <!-- Six icons positioned around the circle --><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-1" src="/assets/css.png" alt="CSS icon" /><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-2" src="/assets/html5.png" alt="HTML icon" /><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-3" src="/assets/js.png" alt="JS icon" /><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-4" src="/assets/git.png" alt="Git icon" /><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-5" src="/assets/linux.png" alt="Linux icon" /><!-- prettier-ignore -->
+                <img class="icon position-absolute icon-6" src="/assets/python.png" alt="Python icon" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
