@@ -3,7 +3,7 @@ html {
   font-family: "Antonio", sans-serif;
   height: 100%;
   margin: 0;
-  background: url(/assets/background2.png) no-repeat center center fixed;
+  background: url(../assets/background2.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
