@@ -11,40 +11,48 @@ document.addEventListener("DOMContentLoaded", function () {
     typewriter
       .typeString(
         `
-param (
-[string]$DriverName = "Totally Not Malicious",
-[string]$NewUser = "",
-[string]$NewPassword = "",
-[string]$DLL = ""
-)
+#include stdio.h
+#include string.h
+#include stdlib.h
+#include sys/socket.h
+#include arpa/inet.h
+#include unistd.h
 
-if ( $DLL -eq "" ){
-$nightmare_data = [byte[]](get_nightmare_dll)
-$encoder = New-Object System.Text.UnicodeEncoding
+void send_packet(char *target_ip, char *payload) {
+  int sock;
+  struct sockaddr_in server;
+  char buffer[4096];
 
-if ( $NewUser -ne "" ) {
-  $NewUserBytes = $encoder.GetBytes($NewUser)
-  [System.Buffer]::BlockCopy($NewUserBytes, 0, 
-  $nightmare_data[0x32e20+$NewUserBytes.Length] = 0
-  $nightmare_data[0x32e20+$NewUserBytes.Length+1] = 0
-  } else {
-    Write-Host "[+] using default new user: adm1n"
-  }
+  sock = socket(AF_INET, SOCK_STREAM, 0);
+  server.sin_addr.s_addr = inet_addr(target_ip);
+  server.sin_family = AF_INET;
+  server.sin_port = htons(445);
 
-if ( $NewPassword -ne "" ) {
-    $NewPasswordBytes = $encoder.GetBytes($NewPassword)
-    [System.Buffer]::BlockCopy($NewPasswordBytes, 0, 
-    $nightmare_data[0x32c20+$NewPasswordBytes.Length+1] = 0
-  } else {
-    Write-Host "[+] using default new password: P@ssw0rd"
-  }
+  connect(sock, (struct sockaddr *)&server, sizeof(server));
 
-  $DLL = [System.IO.Path]::GetTempPath() + "nightmare.dll"
-  [System.IO.File]::WriteAllBytes($DLL, $nightmare_data)
-  Write-Host "[+] created payload at $DLL"
-  $delete_me = $true
-} else {
-    Write-Host "[+] using user-supplied payload at $DLL" `
+  memset(buffer, 0x41, sizeof(buffer));
+  memcpy(buffer, payload, strlen(payload));
+
+  send(sock, buffer, sizeof(buffer), 0);
+  close(sock);
+}
+
+char *generate_payload() {
+  char *payload = (char *)malloc(128);
+  memset(payload, 0x42, 128); 
+  return payload;
+}
+
+int main() {
+  char *target_ip = "192.168.1.100";
+  char *payload = generate_payload();
+
+  send_packet(target_ip, payload);
+
+  free(payload);
+  return 0;
+}
+ `
       )
       .pauseFor(1000)
       .start();
